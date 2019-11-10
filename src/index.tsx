@@ -18,3 +18,4 @@ export const GlobalStyle = createGlobalStyle`
 
 export { default as Hero } from './Hero'
 export { default as Section } from './Section'
+export { default as Steps } from './Steps'

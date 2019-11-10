@@ -9,6 +9,7 @@ const Container = styled(Box)`
     width: 100%;
     position: relative;
     padding: 50px 0;
+    padding-bottom: 0;
 `
 
 export default ({
