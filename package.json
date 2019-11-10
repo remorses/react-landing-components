@@ -27,6 +27,7 @@
     "@types/styled-components": "^4.4.0",
     "hybrid-components": "^2.0.25",
     "react": "^16.11.0",
+    "react-awesome-button": "^6.3.0",
     "react-dom": "^16.11.0",
     "styled-components": "^4.4.1",
     "styled-icons": "^8.6.0"

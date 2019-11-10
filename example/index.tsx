@@ -1,9 +1,20 @@
-import { Hero, GlobalStyle, Section, Steps, Feature, Logo } from '../src'
+import {
+    Hero,
+    GlobalStyle,
+    Section,
+    Steps,
+    Feature,
+    Logo,
+    Button
+} from '../src'
 import React from 'react'
 import { render } from 'react-dom'
 import { H1, Image } from 'hybrid-components'
 import { Head, SubHead } from '../src/Text'
-import {Archive, Airplay, Aperture} from 'styled-icons/feather'
+import { Archive, Airplay, Aperture } from 'styled-icons/feather'
+
+import { AwesomeButton } from 'react-awesome-button'
+import 'react-awesome-button/dist/styles.css'
 
 const App = () => {
     return (
@@ -16,13 +27,26 @@ const App = () => {
                 />
                 <Head>Header on top</Head>
                 <SubHead>Sotto head</SubHead>
+                <Button>docs</Button>
             </Hero>
             <Section>
                 <Head>How it Works</Head>
                 <Steps>
-                    <Steps.Step icon={<Archive width='90px'/>} title='uno' description='prima cosa' />
-                    <Steps.Step icon={<Airplay width='90px'/>}  title='due' description='sec cosa' />
-                    <Steps.Step icon={<Aperture width='90px'/>}  title='tre' description='ultima cosa' />
+                    <Steps.Step
+                        icon={<Archive width='90px' />}
+                        title='uno'
+                        description='prima cosa'
+                    />
+                    <Steps.Step
+                        icon={<Airplay width='90px' />}
+                        title='due'
+                        description='sec cosa'
+                    />
+                    <Steps.Step
+                        icon={<Aperture width='90px' />}
+                        title='tre'
+                        description='ultima cosa'
+                    />
                 </Steps>
             </Section>
             <Section>
@@ -33,7 +57,17 @@ const App = () => {
                     Concerto lets you model the data used in your templates in a flexible and expressive way. 
                     Models can be written in a modular and portable way so they can be reused in a variety of contracts.
                     `}
-                    image='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg'
+                    image={<img  src='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg'/>}
+                />
+                <Feature
+                    right
+                    title='model'
+                    description={`
+                    Concerto lets you model the data used in your templates in a flexible and expressive way. 
+                    Models can be written in a modular and portable way so they can be reused in a variety of contracts.
+                    `}
+                    // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
+                    image={<Airplay/>}
                 />
             </Section>
         </>

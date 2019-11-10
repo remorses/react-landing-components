@@ -35,7 +35,7 @@ const Step = ({ number = 0, title, description, icon = <img/> }) => {
             <Text textAlign='center' fontWeight='bold' fontSize='24px'>
                 {title}
             </Text>
-            <Text textAlign='center' fontSize='16px' opacity={0.7}>
+            <Text textAlign='center'  fontSize='16px' opacity={0.7}>
                 {description}
             </Text>
         </Box>
