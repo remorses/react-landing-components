@@ -1,4 +1,4 @@
-import { Hero, GlobalStyle, Section, Steps } from '../src'
+import { Hero, GlobalStyle, Section, Steps, Feature } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
 import { H1, Image } from 'hybrid-components'
@@ -26,11 +26,11 @@ const App = () => {
             </Section>
             <Section>
                 <Head>Features</Head>
-                <Steps>
-                    <Steps.Step title='uno' description='prima cosa' />
-                    <Steps.Step title='due' description='sec cosa' />
-                    <Steps.Step title='tre' description='ultima cosa' />
-                </Steps>
+                <Feature
+                    title='model'
+                    description='Concerto lets you model the data used in your templates in a flexible and expressive way. Models can be written in a modular and portable way so they can be reused in a variety of contracts.'
+                    image=''
+                />
             </Section>
         </>
     )
