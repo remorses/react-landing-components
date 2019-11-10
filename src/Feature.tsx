@@ -18,7 +18,7 @@ const Paragraphs = ({ children }) => {
     return (
         <>
             {children.split('\n').map((x) => (
-                <Text textAlign='left' fontSize='16px' opacity={0.7} my='2px'>
+                <Text textAlign='left' fontSize='16px' opacity={0.7} my='20px' letterSpacing='.08em' lineHeight='20px'>
                     {x}
                 </Text>
             ))}

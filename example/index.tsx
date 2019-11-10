@@ -1,27 +1,28 @@
-import { Hero, GlobalStyle, Section, Steps, Feature } from '../src'
+import { Hero, GlobalStyle, Section, Steps, Feature, Logo } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
 import { H1, Image } from 'hybrid-components'
 import { Head, SubHead } from '../src/Text'
+import {Archive, Airplay, Aperture} from 'styled-icons/feather'
 
 const App = () => {
     return (
         <>
             <GlobalStyle />
             <Hero>
-                <img
+                <Logo
                     width={300}
                     src='https://fasttext.cc/img/fasttext-logo-color-web.png'
                 />
-                <Head>HEAD</Head>
+                <Head>Header on top</Head>
                 <SubHead>Sotto head</SubHead>
             </Hero>
             <Section>
                 <Head>How it Works</Head>
                 <Steps>
-                    <Steps.Step title='uno' description='prima cosa' />
-                    <Steps.Step title='due' description='sec cosa' />
-                    <Steps.Step title='tre' description='ultima cosa' />
+                    <Steps.Step icon={<Archive width='90px'/>} title='uno' description='prima cosa' />
+                    <Steps.Step icon={<Airplay width='90px'/>}  title='due' description='sec cosa' />
+                    <Steps.Step icon={<Aperture width='90px'/>}  title='tre' description='ultima cosa' />
                 </Steps>
             </Section>
             <Section>

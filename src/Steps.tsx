@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, H1, H2, Text } from 'hybrid-components'
+import { Box, H1, H2, Text, Row } from 'hybrid-components'
 import styled from 'styled-components'
 
 const Container = styled(Box)`
@@ -16,19 +16,28 @@ const Steps = ({ children }) => {
         <Container>
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
-                    number: i
+                    number: i + 1
                 })
             )}
         </Container>
     )
 }
 
-const Step = ({number=0, title, description, icon='', }) => {
+const Step = ({ number = 0, title, description, icon = <img/> }) => {
     return (
         <Box width='200px' m='40px'>
-            <Text  fontWeight='bold' fontSize='24px'>{number}</Text>
-            <Text textAlign='center' fontWeight='bold' fontSize='24px' >{title}</Text>
-            <Text textAlign='center' fontSize='16px' opacity={.7}>{description}</Text>
+                <Text width='40px' fontWeight='bold' fontSize='24px'>
+                    .{number}
+                </Text>
+            <Row justifyContent='center'>
+                {React.cloneElement(icon, {height: '100px'})}
+            </Row>
+            <Text textAlign='center' fontWeight='bold' fontSize='24px'>
+                {title}
+            </Text>
+            <Text textAlign='center' fontSize='16px' opacity={0.7}>
+                {description}
+            </Text>
         </Box>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from 'hybrid-components'
 
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-family: Roboto, sans-serif;
     }
+`
+
+export const Logo = styled.img`
+margin: 40px;
 `
 
 export { default as Hero } from './Hero'
