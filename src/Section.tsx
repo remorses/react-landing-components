@@ -1,0 +1,22 @@
+import React from 'react'
+import { Box, H1, H2 } from 'hybrid-components'
+import styled from 'styled-components'
+
+const Container = styled(Box)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+`
+
+export default ({
+    children
+}) => {
+    return (
+        <Container >
+            {children}
+        </Container>
+    )
+}
