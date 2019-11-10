@@ -28,8 +28,11 @@ const App = () => {
                 <Head>Features</Head>
                 <Feature
                     title='model'
-                    description='Concerto lets you model the data used in your templates in a flexible and expressive way. Models can be written in a modular and portable way so they can be reused in a variety of contracts.'
-                    image=''
+                    description={`
+                    Concerto lets you model the data used in your templates in a flexible and expressive way. 
+                    Models can be written in a modular and portable way so they can be reused in a variety of contracts.
+                    `}
+                    image='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg'
                 />
             </Section>
         </>

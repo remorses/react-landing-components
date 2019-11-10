@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const Container = styled(Box)`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     margin: 50px 0;
