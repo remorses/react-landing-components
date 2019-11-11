@@ -31,8 +31,8 @@ const ButtonInside = styled.a<Props>`
     bottom: 0;
     left: 0;
     right: 0;
-    background: ${getColor};
-    color: ${getBg};
+    background: ${getBg};
+    color: ${getColor};
     transform: translateY(100%);
     transition: transform .1s ease-out;
 `

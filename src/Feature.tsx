@@ -3,7 +3,7 @@ import { Box, Text, H1, H2 } from 'hybrid-components'
 import styled from 'styled-components'
 import { space } from 'styled-system'
 
-const Paragraphs = ({ children }) => {
+const Paragraphs = ({ children, right=false }) => {
     return (
         <>
             {children
@@ -12,11 +12,11 @@ const Paragraphs = ({ children }) => {
                 .map((x) => (
                     <Text
                         key={x}
-                        textAlign='left'
+                        textAlign={right ? 'right' : 'left'}
                         fontSize='16px'
                         opacity={0.7}
-                        my='20px'
-                        letterSpacing='.08em'
+                        my='10px'
+                        letterSpacing='.04em'
                         lineHeight='20px'
                     >
                         {x}
@@ -51,7 +51,7 @@ export default ({
                 {title}
             </Text>
             {/* <Box height='40px' /> */}
-            <Paragraphs>{description}</Paragraphs>
+            <Paragraphs right={right}>{description}</Paragraphs>
         </Part>
     )
     const b = <Part>{React.cloneElement(image, { width: '300px' })}</Part>

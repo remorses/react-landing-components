@@ -12,7 +12,7 @@ interface Theme {
 }
 
 const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
     * { box-sizing: border-box; }
     
     body {
