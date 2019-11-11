@@ -29,10 +29,10 @@ cosa:
 
 const App = () => {
     return (
-        <Provider color='rgb(15,52,74)' bg='#eee'>
+        <Provider color='rgb(15,52,74)' bg='#eee' gradients={['#ffeae8', '#f1efff',]}>
             <Hero>
                 <Logo width={800} src={require('./mongoke.svg')} />
-                <Head>Mongoke</Head>
+                <Head fontSize='60px'>Mongoke</Head>
                 <SubHead>instant Graphql on MongoDb</SubHead>
                 <Button>Get Started</Button>
             </Hero>

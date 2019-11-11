@@ -6,6 +6,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 interface Theme {
     color: string
     bg: string
+    gradients: string[]
 }
 
 const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
@@ -18,13 +19,15 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
         padding: 0;
         margin: 0;
         font-family: Roboto, sans-serif;
+        ${p => p.theme.gradients.length ? 'background-image: repeating-linear-gradient(' + [...p.theme.gradients, p.theme.gradients[0]].join(", ") + ');' : ''}
     }
 `
 
-export const Provider = ({ color = 'black', bg='white', children }) => {
+export const Provider = ({ color = 'black', bg='white', gradients=[], children }) => {
     const theme = {
         color,
-        bg
+        bg,
+        gradients
     }
     return (
         <ThemeProvider theme={theme}>
