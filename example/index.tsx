@@ -6,7 +6,8 @@ import {
     Logo,
     Button,
     Provider,
-    Code
+    Code,
+    FeatureList
 } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
@@ -39,6 +40,22 @@ const App = () => {
             <Section>
                 <Head>Simple configuration</Head>
                 <Code width='800px' language='yaml' code={codeStr} />
+            </Section>
+            <Section>
+                <Head>cose</Head>
+                <FeatureList>
+                    <FeatureList.Feature
+                        icon={<Archive width='90px' />}
+                        title='Powerful queries'
+                        description='The generated queries are super optimized. The generated queries are super optimized'
+                    />
+                    <FeatureList.Feature
+                        icon={<Airplay width='90px' />}
+                        title='Write your db schema'
+                        description='prima cosa'
+                    />
+                    
+                </FeatureList>
             </Section>
             <Section>
                 <Head>How it Works</Head>
