@@ -14,6 +14,6 @@ export const SubHead = styled(Text)`
 text-align: center;
 font-size: 34px;
 font-weight: normal;
-opacity: .7;
+opacity: .8;
 margin: 5px 0;
 `

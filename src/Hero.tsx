@@ -25,16 +25,16 @@ const BackImage = styled.img`
 
 export default ({
     backImg = '',
-    backColor = 'lightblue',
-    color = 'black',
-    children
+    bg = 'lightblue',
+    children,
+    color=''
 }) => {
     return (
-        <Container style={{color}}>
+        <Container style={color ? {color} : {}}>
             {children}
             {backImg && <BackImage src={backImg} alt='' />}
-            {backColor && (
-                <BackImage as={'div'} style={{ background: backColor }} />
+            {bg && (
+                <BackImage as={'div'} style={{ background: bg }} />
             )}
         </Container>
     )

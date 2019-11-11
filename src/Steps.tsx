@@ -16,7 +16,8 @@ const Steps = ({ children }) => {
         <Container>
             {React.Children.map(children, (child, i) =>
                 React.cloneElement(child, {
-                    number: i + 1
+                    number: i + 1,
+                    key: i
                 })
             )}
         </Container>
@@ -25,7 +26,7 @@ const Steps = ({ children }) => {
 
 const Step = ({ number = 0, title, description, icon = <img/> }) => {
     return (
-        <Box width='200px' m='20px'>
+        <Box  width='250px' m='20px'>
                 <Text width='40px' fontWeight='bold' fontSize='24px'>
                     .{number}
                 </Text>

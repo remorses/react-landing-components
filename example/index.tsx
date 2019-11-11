@@ -1,50 +1,42 @@
-import {
-    Hero,
-    GlobalStyle,
-    Section,
-    Steps,
-    Feature,
-    Logo,
-    Button
-} from '../src'
+import { Hero, Section, Steps, Feature, Logo, Button, Provider, Code } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
-import { H1, Image } from 'hybrid-components'
+import { H1, Image, Text, Box } from 'hybrid-components'
 import { Head, SubHead } from '../src/Text'
 import { Archive, Airplay, Aperture } from 'styled-icons/feather'
 
-import { AwesomeButton } from 'react-awesome-button'
-import 'react-awesome-button/dist/styles.css'
+
+const codeStr = `
+cosa:
+    x: Str
+`
+
 
 const App = () => {
     return (
-        <>
-            <GlobalStyle />
-            <Hero>
-                <Logo
-                    width={300}
-                    src='https://fasttext.cc/img/fasttext-logo-color-web.png'
-                />
-                <Head>Unique source of truth for all your types</Head>
-                <SubHead>Unique source of truth for all your types</SubHead>
-                <Button>docs</Button>
+        <Provider color='rgb(15,52,74)' bg='#eee'>
+            <Hero color='white' bg='black'>
+                <Logo width={800} src={require('./mongoke.svg')} />
+                <Head>Mongoke</Head>
+                <SubHead>instant Graphql on MongoDb</SubHead>
+                <Button invert>Let's go</Button>
             </Hero>
             <Section>
                 <Head>How it Works</Head>
                 <Steps>
                     <Steps.Step
                         icon={<Archive width='90px' />}
-                        title='uno'
+                        title='Write your db schema'
                         description='prima cosa'
                     />
                     <Steps.Step
                         icon={<Airplay width='90px' />}
-                        title='due'
+                        title='Connect to your MongoDb'
                         description='sec cosa'
                     />
                     <Steps.Step
                         icon={<Aperture width='90px' />}
-                        title='tre'
+                        title='Deploy with Docker'
                         description='ultima cosa'
                     />
                 </Steps>
@@ -53,26 +45,33 @@ const App = () => {
                 <Head>Features</Head>
                 <Feature
                     title='model'
-                    bg='yellow'
                     description={`
                     Concerto lets you model the data used in your templates in a flexible and expressive way. 
                     Models can be written in a modular and portable way so they can be reused in a variety of contracts.
                     `}
-                    image={<img  src='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg'/>}
+                    image={
+                        <img src='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg' />
+                    }
                 />
                 <Feature
                     right
-                    
                     title='model'
                     description={`
                     Concerto lets you model the data used in your templates in a flexible and expressive way. 
                     Models can be written in a modular and portable way so they can be reused in a variety of contracts.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<Airplay/>}
+                    image={<Airplay />}
                 />
             </Section>
-        </>
+            <Section>
+                <Head>
+                    Simple comfiguration
+                    <Code language='yaml' code={codeStr}/>
+                    
+                </Head>
+            </Section>
+        </Provider>
     )
 }
 
