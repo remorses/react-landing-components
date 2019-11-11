@@ -25,7 +25,7 @@ const BackImage = styled.img`
 
 export default ({
     backImg = '',
-    bg = 'lightblue',
+    bg = 'none',
     children,
     color=''
 }) => {

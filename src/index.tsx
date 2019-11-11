@@ -36,44 +36,13 @@ export const Provider = ({ color = 'black', bg='white', children }) => {
 
 export * from './Text'
 
-export const Button = styled.button<{ invert?: boolean }>`
-    color: ${(p) => {
-        if (p.invert) {
-            return p.theme.color
-        }
-        const isLight = Color(p.theme.color).isLight()
-        return isLight ? '#000' : '#fff'
-    }};
-    background: ${(p) => {
-        if (p.invert) {
-            const isLight = Color(p.theme.color).isLight()
-            return isLight ? '#000' : '#fff'
-        }
-        return p.theme.color
-    }};
-    
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 24px;
-    border-radius: 6px;
-    border-width: 0px;
-    margin: 20px;
-    cursor: pointer;
-    & :focus {
-        opacity: 0;
-        background: white;
-    }
-    & :hover {
-        opacity: 0;
-        background: white;
-    }
-`
 
 export const Logo = styled.img`
     margin: 20px;
 `
 
 export { default as Hero } from './Hero'
+export { default as Button } from './Button'
 export { default as Code } from './Code'
 export { default as Section } from './Section'
 export { default as Steps } from './Steps'
