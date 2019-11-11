@@ -7,8 +7,9 @@ export const Head: FC<TextProps> = (p) => {
     return (
         <Text
             fontSize='34px'
-            fontWeight='bolder'
+            fontWeight={600}
             my='10px'
+            maxWidth={'800px'}
             textAlign='center'
             {...p}
         />
@@ -21,6 +22,7 @@ export const SubHead: FC<TextProps> = (p) => {
             fontWeight='normal'
             opacity={.8}
             my='10px'
+            maxWidth={'800px'}
             textAlign='center'
             {...p}
         />

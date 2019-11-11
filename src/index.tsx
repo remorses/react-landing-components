@@ -1,7 +1,9 @@
-import React, {  } from 'react'
+import React, { FC } from 'react'
 import { Box } from 'hybrid-components'
 import Color from 'color'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import {layout, space} from 'styled-system'
+import { BoxProps } from 'hybrid-components/src/types'
 
 interface Theme {
     color: string
@@ -23,7 +25,7 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     }
 `
 
-export const Provider = ({ color = 'black', bg='white', gradients=[], children }) => {
+export const Provider = ({ color = 'black', bg='white', gradients=[] as string[], children }) => {
     const theme = {
         color,
         bg,
@@ -40,9 +42,13 @@ export const Provider = ({ color = 'black', bg='white', gradients=[], children }
 export * from './Text'
 
 
-export const Logo = styled.img`
-    margin: 20px;
-`
+export const Logo: FC<BoxProps & {src: string}> = (p) => {
+    return (
+        <Box {...p} >
+            <img  src={p.src} width='100%'/>
+        </Box>
+    )
+}
 
 export { default as Hero } from './Hero'
 export { default as FeatureList } from './FeatureList'
