@@ -3,16 +3,6 @@ import { Box, Text, H1, H2 } from 'hybrid-components'
 import styled from 'styled-components'
 import { space } from 'styled-system'
 
-const Container = styled(Box)`
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    padding: 50px 40px;
-    padding-bottom: 0;
-    overflow: hide;
-`
 
 
 const Paragraphs = ({ children }) => {
@@ -50,7 +40,7 @@ export default ({ bg='none', image = <img />, title, description, right = false 
         </Part>
     )
     const b = <Part>{React.cloneElement(image, {width: '300px', })}</Part>
-    const content = [b, a]
+    
     const direction = right ? 'row' : 'row-reverse'
     return (
         <Box bg={bg} alignItems='center' my='40px'>
@@ -63,7 +53,7 @@ export default ({ bg='none', image = <img />, title, description, right = false 
             flexDirection={direction}
             my='20px'
         >
-            {content}
+            {[a, b]}
         </Box>
         </Box>
     )

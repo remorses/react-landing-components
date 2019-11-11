@@ -37,8 +37,8 @@ const App = () => {
                 <Button>Get Started</Button>
             </Hero>
             <Section>
-                <Head>Simple comfiguration</Head>
-                <Code width='600px' language='yaml' code={codeStr} />
+                <Head>Simple configuration</Head>
+                <Code width='800px' language='yaml' code={codeStr} />
             </Section>
             <Section>
                 <Head>How it Works</Head>
