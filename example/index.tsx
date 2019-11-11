@@ -25,8 +25,8 @@ const App = () => {
                     width={300}
                     src='https://fasttext.cc/img/fasttext-logo-color-web.png'
                 />
-                <Head>Header on top</Head>
-                <SubHead>Sotto head</SubHead>
+                <Head>Unique source of truth for all your types</Head>
+                <SubHead>Unique source of truth for all your types</SubHead>
                 <Button>docs</Button>
             </Hero>
             <Section>

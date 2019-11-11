@@ -7,12 +7,13 @@ export const Head = styled.h1`
 font-size: 34px;
 font-weight: bold;
 margin: 10px 0;
+text-align: center;
 `
 
 export const SubHead = styled(Text)`
 text-align: center;
 font-size: 34px;
 font-weight: normal;
-opacity: 70%;
+opacity: .7;
 margin: 5px 0;
 `

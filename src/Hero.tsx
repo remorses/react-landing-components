@@ -8,7 +8,7 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     position: relative;
-    padding: 50px 0;
+    padding: 50px 40px;
 `
 
 const BackImage = styled.img`

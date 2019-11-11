@@ -7,7 +7,7 @@ const Container = styled(Box)`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    max-width: 900px;
     margin: 50px 0;
 `
 
@@ -25,7 +25,7 @@ const Steps = ({ children }) => {
 
 const Step = ({ number = 0, title, description, icon = <img/> }) => {
     return (
-        <Box width='200px' m='40px'>
+        <Box width='200px' m='20px'>
                 <Text width='40px' fontWeight='bold' fontSize='24px'>
                     .{number}
                 </Text>
