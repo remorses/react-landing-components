@@ -13,14 +13,12 @@ const Container = styled(Box)`
     padding-bottom: 0;
     overflow: hide;
 `
-const Part = (p) => (
-    <Box p='60px' minHeight='300px' alignItems='center' overflow='hidden' width={[1, 1, 0.5, 0.5, 0.5]} {...p} />
-)
+
 
 const Paragraphs = ({ children }) => {
     return (
         <>
-            {children.split('\n').map((x) => (
+            {children.split('\n').filter(x => x).map((x) => (
                 <Text
                     key={x}
                     textAlign='left'
@@ -37,7 +35,11 @@ const Paragraphs = ({ children }) => {
     )
 }
 
-export default ({ image = <img />, title, description, right = false }) => {
+const Part = (p) => (
+    <Box px='60px' justifyContent='space-evenly' minHeight='300px' alignItems='center' overflow='hidden' width={[1, 1, 0.5, 0.5, 0.5]} {...p} />
+)
+
+export default ({ bg='none', image = <img />, title, description, right = false }) => {
     const a = (
         <Part>
             <Text textAlign='center' fontWeight='bold' fontSize='32px'>
@@ -51,6 +53,7 @@ export default ({ image = <img />, title, description, right = false }) => {
     const content = [b, a]
     const direction = right ? 'row' : 'row-reverse'
     return (
+        <Box bg={bg} alignItems='center' my='40px'>
         <Box
             flexWrap='wrap'
             alignItems='center'
@@ -58,8 +61,10 @@ export default ({ image = <img />, title, description, right = false }) => {
             width={1}
             maxWidth='900px'
             flexDirection={direction}
+            my='20px'
         >
             {content}
+        </Box>
         </Box>
     )
 }
