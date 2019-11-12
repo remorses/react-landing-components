@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import themeDark from 'prism-react-renderer/themes/nightOwl'
 import themeLight from 'prism-react-renderer/themes/duotoneLight'
@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { Box } from 'hybrid-components'
 import { BoxProps } from 'hybrid-components/src/types'
 
-export const Pre = styled.pre`
+export const Pre: FC<any> = styled.pre`
     text-align: left;
 
     width: 100%;
@@ -22,7 +22,7 @@ export const Pre = styled.pre`
     }
 `
 
-export const LineNo = styled.span`
+export const LineNo: FC<any> = styled.span`
     display: inline-block;
     width: 2em;
     user-select: none;
