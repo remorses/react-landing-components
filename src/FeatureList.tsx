@@ -16,12 +16,12 @@ const Features = ({ children }) => {
     return (
         <Container>
             <div>
-            {React.Children.map(children, (child, i) =>
-                React.cloneElement(child, {
-                    number: i + 1,
-                    key: i
-                })
-            )}
+                {React.Children.map(children, (child, i) =>
+                    React.cloneElement(child, {
+                        number: i + 1,
+                        key: i
+                    })
+                )}
             </div>
         </Container>
     )
@@ -29,12 +29,11 @@ const Features = ({ children }) => {
 
 const Feature = ({ title, description, icon = <img /> }) => {
     return (
-        <Box  m='20px' alignItems='flex-start' width='auto'>
+        <Box m='20px' alignItems='flex-start' width='auto'>
             <Row justifyContent='flex-start' alignItems='center' width='auto'>
-                {React.cloneElement(icon, { height: '50px' })}
-                <Box width='auto' >
+                <Box width='100px'>{React.cloneElement(icon, { height: '50px' })}</Box>
+                <Box width='auto'>
                     <Text
-                    
                         textAlign='left'
                         fontWeight='bold'
                         fontSize='24px'
@@ -42,7 +41,15 @@ const Feature = ({ title, description, icon = <img /> }) => {
                     >
                         {title}
                     </Text>
-                    <Text textAlign='left' fontSize='16px' opacity={0.7} width='auto' letterSpacing='.04em' lineHeight='1.5em' maxWidth='400px'>
+                    <Text
+                        textAlign='left'
+                        fontSize='16px'
+                        opacity={0.7}
+                        width='auto'
+                        letterSpacing='.04em'
+                        lineHeight='1.5em'
+                        maxWidth='400px'
+                    >
                         {description}
                     </Text>
                 </Box>

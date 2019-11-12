@@ -12,7 +12,8 @@ const Paragraphs = ({ children, right=false }) => {
                 .map((x) => (
                     <Text
                         key={x}
-                        textAlign={right ? 'right' : 'left'}
+                        // textAlign={right ? 'right' : 'left'}
+                        textAlign='left'
                         fontSize='16px'
                         opacity={0.7}
                         my='10px'
@@ -46,7 +47,7 @@ export default ({
     right = false
 }) => {
     const a = (
-        <Part>
+        <Part key='1'>
             <Text textAlign='center' fontWeight='bold' fontSize='32px'>
                 {title}
             </Text>
@@ -54,7 +55,7 @@ export default ({
             <Paragraphs right={right}>{description}</Paragraphs>
         </Part>
     )
-    const b = <Part>{React.cloneElement(image, { width: '300px' })}</Part>
+    const b = <Part key='2'>{React.cloneElement(image, { width: '300px' })}</Part>
 
     const direction = right ? 'row' : 'row-reverse'
     return (

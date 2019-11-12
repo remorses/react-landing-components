@@ -11,11 +11,8 @@ interface Theme {
     gradients: string[]
 }
 
-const GlobalStyle = styled.div<{ theme: Theme }>`
+const Styler = styled.div<{ theme: Theme }>`
     @import url('https://fonts.googleapis.com/css?family=Roboto');
-    & * {
-        box-sizing: border-box;
-    }
 
     color: ${(p) => p.theme.color || 'black'};
     background: ${(p) => p.theme.bg || 'white'};
@@ -28,6 +25,16 @@ const GlobalStyle = styled.div<{ theme: Theme }>`
               [...p.theme.gradients, p.theme.gradients[0]].join(', ') +
               ');'
             : ''}
+`
+
+const GlobalStyle = createGlobalStyle`
+body {
+    padding: 0;
+    margin: 0;
+}
+& * {
+        box-sizing: border-box;
+    }
 `
 
 export const Provider = ({
@@ -43,7 +50,8 @@ export const Provider = ({
     }
     return (
         <ThemeProvider theme={theme}>
-            <GlobalStyle>{children}</GlobalStyle>
+            <GlobalStyle />
+            <Styler>{children}</Styler>
         </ThemeProvider>
     )
 }

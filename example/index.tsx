@@ -37,7 +37,7 @@ const App = () => {
             bg='#eee'
             gradients={['#ffeae8', '#f1efff']}
         >
-            <NavBar>
+            <NavBar color='white'>
                 <a href='#'>Docs</a>
                 <a>Github</a>
             </NavBar>

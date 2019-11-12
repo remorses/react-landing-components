@@ -21,7 +21,8 @@ const Styler = styled.div`
 export default ({ children, color = '' }) => {
     const theme = useContext(ThemeContext)
     const style = {
-        color: color || theme.color
+        color: color || theme.color,
+        background: theme.color
     }
     return (
         <Box

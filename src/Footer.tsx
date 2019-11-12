@@ -20,7 +20,10 @@ const Styler = styled.div`
     }
 `
 
-export default ({ columns={} as { [k: string]: ReactNode }, businessName='Monster Inc.' }) => {
+export default ({
+    columns = {} as { [k: string]: ReactNode },
+    businessName = 'Monster Inc.'
+}) => {
     const theme = useContext(ThemeContext)
     const isLight = Color(theme.color).isLight()
     const style = {
@@ -28,25 +31,40 @@ export default ({ columns={} as { [k: string]: ReactNode }, businessName='Monste
         background: isLight ? 'black' : theme.color
     }
     return (
-        <Box
-            minHeight='200px'
-            alignItems='space-evenly'
-            
-            style={style}
-        >
+        <Box minHeight='200px' alignItems='space-evenly' style={style}>
             <Styler>
-                <Row flexWrap='wrap' mx='40px' width='auto' justifyContent='space-evenly'>
-                    {Object.keys(columns).map(k => {
+                <Row
+                    flexWrap='wrap'
+                    mx='40px'
+                    width='auto'
+                    justifyContent='space-evenly'
+                >
+                    {Object.keys(columns).map((k) => {
                         return (
-                            <Box mx='40px' my='40px'>
-                                <Text my='10px' fontSize='16px' fontWeight='bold' width='auto' textAlign='left'>{k}</Text>
+                            <Box key={k} mx='40px' my='40px' width='auto'>
+                                <Text
+                                    my='10px'
+                                    fontSize='16px'
+                                    fontWeight='bold'
+                                    width='auto'
+                                    textAlign='left'
+                                >
+                                    {k}
+                                </Text>
                                 {columns[k]}
                             </Box>
                         )
                     })}
                 </Row>
                 <Row justifyContent='center' my='10px'>
-                    <Text width='auto' opacity={.6} fontWeight='normal' fontSize='14px'> Copyright © 2019 {businessName} </Text>
+                    <Text
+                        width='auto'
+                        opacity={0.6}
+                        fontWeight='normal'
+                        fontSize='14px'
+                    >
+                        Copyright © 2019 {businessName}{' '}
+                    </Text>
                 </Row>
             </Styler>
         </Box>
