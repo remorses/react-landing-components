@@ -17,6 +17,7 @@ import {
 import React from 'react'
 import { H1, Image, Text, Box, Row } from 'hybrid-components'
 import { Archive, Airplay, Aperture, ArrowRight, FileText, UploadCloud, Database, Lock, List, Activity, Grid, PackageIcon, Shield } from 'styled-icons/feather'
+import {Plug} from 'styled-icons/octicons'
 import { DOCS_LINK, GITHUB_LINK, codeStr, codeGraphql, codeSchema, codeTypes, codeRelations, TWITTER_LINK } from './constants'
 
 
@@ -150,7 +151,8 @@ const App = () => {
                     Thanks to Apollo federation the mongoke generated service is composable with other graphql services, you can handle mutations and more specific logic in differnt services.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<img width='300px' src={require('./network.png')} style={{opacity: .9}} />}
+                    // image={<img width='300px' src={require('./network.png')} style={{opacity: .9}} />}
+                    image={<Plug width='200px'/>}
                 />
 
             </Section>
