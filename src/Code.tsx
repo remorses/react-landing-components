@@ -34,7 +34,7 @@ const Code = (p: {light?: boolean, language: Language; code: string } & BoxProps
         <Box
             width='400px'
             style={{ fontSize: '16px', }}
-            
+            m='40px'
             {...p}
         >
             <Highlight {...defaultProps} theme={!p.light ? themeDark : themeLight} {...p}>

@@ -15,21 +15,21 @@ const Container = styled(Box)`
 const Features = ({ children }) => {
     return (
         <Container>
-            <div>
+            <>
                 {React.Children.map(children, (child, i) =>
                     React.cloneElement(child, {
                         number: i + 1,
                         key: i
                     })
                 )}
-            </div>
+            </>
         </Container>
     )
 }
 
 const Feature = ({ title, description, icon = <img /> }) => {
     return (
-        <Box m='20px' alignItems='flex-start' width='auto'>
+        <Box  m='40px' alignItems='flex-start' width='auto'>
             <Row justifyContent='flex-start' alignItems='center' width='auto'>
                 <Box width='100px'>{React.cloneElement(icon, { height: '50px' })}</Box>
                 <Box width='auto'>

@@ -55,7 +55,7 @@ export default ({
             <Paragraphs right={right}>{description}</Paragraphs>
         </Part>
     )
-    const b = <Part key='2'>{React.cloneElement(image, { width: '300px' })}</Part>
+    const b = <Part key='2'>{React.cloneElement(image, {  })}</Part>
 
     const direction = right ? 'row' : 'row-reverse'
     return (

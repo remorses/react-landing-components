@@ -22,7 +22,7 @@ const getBg = (p) => {
 
 interface Props { invert?: boolean }
 
-const ButtonInside = styled.a<Props>`
+const ButtonInside = styled.div<Props>`
     position: absolute;
     display: flex;
     justify-content: center;
@@ -67,7 +67,7 @@ const ButtonContainer = styled.a<Props>`
 export default ({ invert=false, children, href='' }) => {
     return (
         <ButtonContainer href={href} invert={invert} >
-            <ButtonInside href={href} invert={invert}>Let's go</ButtonInside>
+            <ButtonInside onClick={() => href} invert={invert}>Let's go</ButtonInside>
             {children}
         </ButtonContainer>
     )
