@@ -37,7 +37,7 @@ const ButtonInside = styled.a<Props>`
     transition: transform .1s ease-out;
 `
 
-const ButtonContainer = styled.button<Props>`
+const ButtonContainer = styled.a<Props>`
     color: ${getColor};
     background: ${getBg};
     position: relative;
@@ -64,10 +64,10 @@ const ButtonContainer = styled.button<Props>`
 
 
 
-export default ({ invert=false, children }) => {
+export default ({ invert=false, children, href='' }) => {
     return (
-        <ButtonContainer invert={invert} >
-            <ButtonInside invert={invert}>Let's go</ButtonInside>
+        <ButtonContainer href={href} invert={invert} >
+            <ButtonInside href={href} invert={invert}>Let's go</ButtonInside>
             {children}
         </ButtonContainer>
     )
