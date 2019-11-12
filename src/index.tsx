@@ -13,6 +13,7 @@ interface Theme {
 
 const Styler = styled.div<{ theme: Theme }>`
     @import url('https://fonts.googleapis.com/css?family=Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Source%20Code%20Pro');
 
     color: ${(p) => p.theme.color || 'black'};
     background: ${(p) => p.theme.bg || 'white'};

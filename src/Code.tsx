@@ -16,7 +16,7 @@ export const Pre: FC<any> = styled.pre`
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
-    font-family: Consolas, Roboto;
+    font-family: "Source Code Pro", Roboto;
     & .token-line {
         line-height: 1.3em;
         height: 1.3em;
