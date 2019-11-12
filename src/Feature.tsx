@@ -33,7 +33,7 @@ const Part = (p) => (
         justifyContent='space-evenly'
         minHeight='300px'
         alignItems='center'
-        overflow='hidden'
+        // overflow='hidden'
         width={[1, 1, 0.5, 0.5, 0.5]}
         {...p}
     />
@@ -48,7 +48,7 @@ export default ({
 }) => {
     const a = (
         <Part key='1'>
-            <Text textAlign='center' fontWeight='bold' fontSize='32px'>
+            <Text textAlign='left' fontWeight='bold' fontSize='32px'>
                 {title}
             </Text>
             {/* <Box height='40px' /> */}

@@ -20,97 +20,6 @@ import { H1, Image, Text, Box, Row } from 'hybrid-components'
 import { Archive, Airplay, Aperture, ArrowRight, FileText, UploadCloud, Database, Lock, List, Activity, Grid, PackageIcon, Shield } from 'styled-icons/feather'
 import {} from 'styled-icons/'
 
-const DOCS_LINK = '/docs'
-const GITHUB_LINK = 'https://github.com/remorses/mongoke'
-
-const codeStr = `
-schema: |
-    type User {
-        _id: ObjectId
-        username: String
-        email: String
-    }
-    type BlogPost {
-        _id: ObjectId
-        author_id: ObjectId
-        title: String
-        content: String
-    }
-
-types:
-    User:
-        collection: users
-    BlogPost:
-        collection: posts
-
-relations:
-    - field: posts
-      from: User
-      to: BlogPost
-      relation_type: to_many
-      where:
-          author_id: $\{{ parent['_id'] }}
-`
-
-const codeSchema = `
-schema: |
-    type User {
-        _id: ObjectId
-        username: String
-        email: String
-    }
-    type BlogPost {
-        _id: ObjectId
-        author_id: ObjectId
-        title: String
-        content: String
-    }
-...
-`
-
-const codeTypes = `
-types:
-    User:
-        collection: users
-    BlogPost:
-        collection: posts
-`
-
-const codeRelations = `
-relations:
-    - field: posts
-      from: User
-      to: BlogPost
-      relation_type: to_many
-      where:
-          author_id: $\{{ parent['_id'] }}
-`
-
-const codeGraphql = `
-{
-    user(where: { username: { eq: "Mike" } }) {
-        _id
-        username
-        email
-        posts {
-            nodes {
-                title
-            }
-        }
-    }
-
-    blogPosts(first: 10, after: "Post 1", cursorField: title) {
-        nodes {
-            title
-            content
-        }
-        pageInfo {
-            endCursor
-            hasNextPage
-        }
-    }
-}
-`
 
 const App = () => {
     return (
@@ -135,24 +44,23 @@ const App = () => {
             <Line/>
             <Section>
                 <Head>
-                    Generate a state of the art graphql service from a one file
-                    configuration
+                    Serve your MongoDb via Graphql with a one file configuration
                 </Head>
                 <Steps>
                     <Steps.Step
                         icon={<FileText width='90px' />}
                         title='Write the yaml config'
-                        description='prima cosa'
+                        description=''
                     />
                     <Steps.Step
                         icon={<Database width='90px' />}
                         title='Connect to Database'
-                        description='sec cosa'
+                        description=''
                     />
                     <Steps.Step
                         icon={<UploadCloud width='90px' />}
                         title='Deploy with Docker'
-                        description='ultima cosa'
+                        description=''
                     />
                 </Steps>
 
@@ -186,18 +94,19 @@ const App = () => {
                         description='Pagination is implemented following the relay style, cursors are available for every field'
                     />
                     <FeatureList.Feature
+                        icon={<Shield width='90px' />}
+                        title='Authorization with Jwt'
+                        description='You decide what field a user has access to, based on the jwt payload and the document requested'
+                    />
+                    <FeatureList.Feature
                         icon={<Grid width='90px' />}
                         title='Apollo Federation compliant'
                         description='You can compose other services together without any effort'
                     />
+
                     <FeatureList.Feature
                         icon={<PackageIcon width='90px' />}
                         title='Easy deploy via Docker'
-                        description='Lightweight image using docker, generates the service on every deploy in couple of seconds'
-                    />
-                    <FeatureList.Feature
-                        icon={<Shield width='90px' />}
-                        title='Authorization with Jwt'
                         description='Lightweight image using docker, generates the service on every deploy in couple of seconds'
                     />
                 </FeatureList>
@@ -208,8 +117,8 @@ const App = () => {
                 <Feature
                     title='Model your db types'
                     description={`
-                    Concerto lets you model the data used in your templates in a flexible and expressive way. 
-                    Models can be written in a modular and portable way so they can be reused in a variety of contracts.
+                    The configuration describe the db types and connects these to associated collections
+                    The types should represent the objects in the database as close as possible
                     `}
                     image={
                         // <img src='https://bemuse.ninja/project/img/screenshots/mode-selection.jpg' />
@@ -218,20 +127,19 @@ const App = () => {
                 />
                 <Feature
                     right
-                    title='Add authorization and connect to database'
+                    title='Authorization with your jwt'
                     description={`
-                    Concerto lets you model the data used in your templates in a flexible and expressive way. 
-                    Models can be written in a modular and portable way so they can be reused in a variety of contracts.
+                    You can add python expressions that evaluates to true if you want an user access a resources. The expression is evaluated with the jwt payload data and document data.
+                    The expression are written in Python and evaluated from top down until one evaluates to true
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
                     image={<Row><Code language='yaml' code={codeTypes} /></Row>}
                 />
                 <Feature
                     
-                    title='Add relations'
+                    title='Relations between types'
                     description={`
-                    Concerto lets you model the data used in your templates in a flexible and expressive way. 
-                    Models can be written in a modular and portable way so they can be reused in a variety of contracts.
+                    Relations are described in the configuration via a query object that will be sent to mongodb, this can evaluate expressions based on the parent component.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
                     image={<Code   language='yaml' code={codeRelations} />}
@@ -240,7 +148,7 @@ const App = () => {
                     right
                     title='Compose your database graphql with other services'
                     description={`
-                    Thanks to Apollo federation the mongoke generated service is composable with other graphql services, to handle mutations and more specific logic
+                    Thanks to Apollo federation the mongoke generated service is composable with other graphql services, you can handle mutations and more specific logic in differnt services.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
                     image={<img width='300px' src={require('./network.png')} style={{opacity: .9}} />}
@@ -251,14 +159,13 @@ const App = () => {
                 columns={{
                     Docs: (
                         <>
-                            <a>Getting Started</a>
-                            <a>Flexing</a>
+                            <a href={DOCS_LINK}>Quick start</a>
                         </>
                     ),
                     Socials: (
                         <>
-                            <a>Twitter</a>
-                            <a>Github</a>
+                            <a href={TWITTER_LINK}>Twitter</a>
+                            <a href={GITHUB_LINK}>Github</a>
                         </>
                     )
                 }}
