@@ -15,10 +15,9 @@ import {
     Line
 } from '../src'
 import React from 'react'
-import { render } from 'react-dom'
 import { H1, Image, Text, Box, Row } from 'hybrid-components'
 import { Archive, Airplay, Aperture, ArrowRight, FileText, UploadCloud, Database, Lock, List, Activity, Grid, PackageIcon, Shield } from 'styled-icons/feather'
-import {} from 'styled-icons/'
+import { DOCS_LINK, GITHUB_LINK, codeStr, codeGraphql, codeSchema, codeTypes, codeRelations, TWITTER_LINK } from './constants'
 
 
 const App = () => {
