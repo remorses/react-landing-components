@@ -60,6 +60,7 @@ export const Logo: FC<BoxProps & { src: string }> = (p) => {
 
 export { default as Hero } from './Hero'
 export { default as NavBar } from './NavBar'
+export { default as Footer } from './Footer'
 export { default as FeatureList } from './FeatureList'
 export { default as Button } from './Button'
 export { default as Code } from './Code'

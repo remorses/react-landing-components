@@ -8,7 +8,8 @@ import {
     Provider,
     Code,
     FeatureList,
-    NavBar
+    NavBar,
+    Footer
 } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
@@ -120,6 +121,22 @@ const App = () => {
                     image={<Airplay />}
                 />
             </Section>
+            <Footer
+                columns={{
+                    Docs: (
+                        <>
+                            <a>Getting Started</a>
+                            <a>Flexing</a>
+                        </>
+                    ),
+                    Socials: (
+                        <>
+                            <a>Twitter</a>
+                            <a>Github</a>
+                        </>
+                    ),
+                }}
+            />
         </Provider>
     )
 }
