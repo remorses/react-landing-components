@@ -59,6 +59,14 @@ export const Provider = ({
     )
 }
 
+export const Line: FC<any> = styled.div`
+height: 2px;
+background: ${p => p.theme.color};
+width: 70%;
+margin: 0 auto;
+opacity: .1;
+`
+
 export * from './Text'
 
 export const Logo: FC<BoxProps & { src: string }> = (p) => {
