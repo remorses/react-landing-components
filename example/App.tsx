@@ -130,7 +130,7 @@ const App = () => {
                 />
                 <Head fontSize='60px'>Mongoke</Head>
                 <SubHead>instant Graphql on MongoDb</SubHead>
-                <Button href={DOCS_LINK}>Read The Docs</Button>
+                <Button href={DOCS_LINK}>Quick Start</Button>
             </Hero>
             <Line/>
             <Section>
