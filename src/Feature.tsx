@@ -12,6 +12,7 @@ const Paragraphs = ({ children, right=false }) => {
                 .map((x) => (
                     <Text
                         key={x}
+                        maxWidth='400px'
                         // textAlign={right ? 'right' : 'left'}
                         textAlign='left'
                         fontSize='16px'
@@ -27,16 +28,22 @@ const Paragraphs = ({ children, right=false }) => {
     )
 }
 
-const Part = (p) => (
+const Part = ({children, ...p}) => (
     <Box
-        px='60px'
-        justifyContent='space-evenly'
-        minHeight='300px'
+        // px='60px'
         alignItems='center'
         // overflow='hidden'
-        width={[1, 1, 0.5, 0.5, 0.5]}
+        // width={[1, 1, 0.5, 0.5, 0.5]}
+        width='auto'
         {...p}
-    />
+    >
+        <Box 
+                justifyContent='space-evenly'
+                alignItems='flex-start'
+                minHeight='300px'
+                width='100%'
+        >{children}</Box>
+    </Box>
 )
 
 export default ({
@@ -48,7 +55,7 @@ export default ({
 }) => {
     const a = (
         <Part key='1'>
-            <Text textAlign='left' fontWeight='bold' fontSize='32px'>
+            <Text textAlign='left' fontWeight='bold' fontSize='32px' maxWidth='400px'>
                 {title}
             </Text>
             {/* <Box height='40px' /> */}
@@ -61,12 +68,12 @@ export default ({
     return (
         <Box bg={bg} alignItems='center' my='40px'>
             <Box
+                flexDirection={direction}
                 flexWrap='wrap'
                 alignItems='center'
-                justifyContent='center'
+                justifyContent='space-evenly'
                 width={1}
                 maxWidth='1100px'
-                flexDirection={direction}
                 my='20px'
             >
                 {[a, b]}

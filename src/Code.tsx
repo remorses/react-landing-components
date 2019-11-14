@@ -12,8 +12,10 @@ export const Pre: FC<any> = styled.pre`
     display: inline-block;
     margin: 1em 0;
     padding: 0.5em;
-    padding-right: 40px;
-    overflow: hidden;
+    padding-right: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    letter-spacing: -.04em;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
     font-family: "Source Code Pro", Roboto;

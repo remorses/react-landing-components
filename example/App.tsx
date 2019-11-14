@@ -133,7 +133,7 @@ const App = () => {
                     The expression are written in Python and evaluated from top down until one evaluates to true
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<Row><Code language='yaml' code={codeTypes} /></Row>}
+                    image={<Row><Code language='yaml' code={codeTypes} width={['100vw', 'auto', null, null]} /></Row>}
                 />
                 <Feature
                     
@@ -142,7 +142,7 @@ const App = () => {
                     Relations are described in the configuration via a query object that will be sent to mongodb, this can evaluate expressions based on the parent component.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<Code   language='yaml' code={codeRelations} />}
+                    image={<Code   language='yaml' code={codeRelations}  />}
                 />
                 <Feature
                     right
