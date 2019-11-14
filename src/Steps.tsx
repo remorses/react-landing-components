@@ -33,7 +33,7 @@ const Step = ({ number = 0, title, description, icon = <img/> }) => {
             <Row justifyContent='center'>
                 {React.cloneElement(icon, {height: '100px'})}
             </Row>
-            <Text textAlign='center' fontWeight='bold' fontSize='24px'>
+            <Text textAlign='center' fontWeight='normal' fontSize='24px' opacity={.9}>
                 {title}
             </Text>
             <Text textAlign='center'  fontSize='16px' opacity={0.7}>
