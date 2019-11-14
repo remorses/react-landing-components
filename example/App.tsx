@@ -85,8 +85,8 @@ const App = () => {
                 <FeatureList>
                     <FeatureList.Feature
                         icon={<Database width='90px' />}
-                        title='Powerful queries for all your data'
-                        description='The generated queries follow the mongodb query model, you can do gt, lt, eq, ...'
+                        title='Powerful queries'
+                        description='one'
                     />
                     <FeatureList.Feature
                         icon={<List width='90px' />}

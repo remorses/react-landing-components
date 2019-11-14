@@ -11,18 +11,22 @@ const Container = styled(Box)`
     max-width: 900px;
     margin: 50px 0;
 `
+const AlignLeft = styled.div`
+display: inline-block;
+text-align: left;
+`
 
 const Features = ({ children }) => {
     return (
         <Container>
-            <>
+            <AlignLeft>
                 {React.Children.map(children, (child, i) =>
                     React.cloneElement(child, {
                         number: i + 1,
                         key: i
                     })
                 )}
-            </>
+            </AlignLeft>
         </Container>
     )
 }
