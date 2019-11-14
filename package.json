@@ -23,6 +23,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "@types/color": "^3.0.0",
     "@types/react": "latest",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.0",

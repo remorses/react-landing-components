@@ -13,7 +13,7 @@ const Container = styled(Box)`
 `
 const AlignLeft = styled.div`
 display: inline-block;
-text-align: left;
+text-align:
 `
 
 const Features = ({ children }) => {

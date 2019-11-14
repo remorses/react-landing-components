@@ -64,9 +64,9 @@ const ButtonContainer = styled.a<Props>`
 
 
 
-export default ({ invert=false, children, href='' }) => {
+export default ({ invert=false, children, href='', ...p }) => {
     return (
-        <ButtonContainer href={href} invert={invert} >
+        <ButtonContainer href={href} invert={invert} {...p} >
             <ButtonInside onClick={() => href} invert={invert}>Let's go</ButtonInside>
             {children}
         </ButtonContainer>
