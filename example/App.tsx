@@ -26,11 +26,11 @@ import { DOCS_LINK, GITHUB_LINK, codeStr, codeGraphql, codeSchema, codeTypes, co
 const App = () => {
     return (
         <Provider
-            color='rgb(15,52,74)'
-            bg='#eee'
-            gradients={['#ffeae8', '#f1efff']}
+            // color='rgb(15,52,74)'
+            // bg='#eee'
+            // gradients={['#ffeae8', '#f1efff']}
         >
-            <NavBar color='white'>
+            <NavBar color='black' bg='white'>
                 <a href={DOCS_LINK}>Docs</a>
                 <a href={GITHUB_LINK}>Github</a>
             </NavBar>

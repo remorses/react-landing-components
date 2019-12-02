@@ -18,11 +18,11 @@ const Styler = styled.div`
     }
 `
 
-export default ({ children, color = '' }) => {
+export default ({ children, color = '', bg='' }) => {
     const theme = useContext(ThemeContext)
     const style = {
         color: color || theme.color,
-        background: theme.color
+        background: bg || theme.color
     }
     return (
         <Box
