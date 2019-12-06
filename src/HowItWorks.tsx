@@ -55,6 +55,7 @@ const HowItWorks = ({ steps = [] }: { steps: Step[] }) => {
                         width='auto'
                         alignItems='center'
                         justifyContent='center'
+                        flex='1 1'
                     >
                         {i !== 0 && (
                             <Box width='auto' display={['none', 'block']}>
@@ -69,7 +70,8 @@ const HowItWorks = ({ steps = [] }: { steps: Step[] }) => {
                         >
                             <Text
                                 width='auto'
-                                fontWeight='bolder'
+                                textAlign='center'
+                                // fontWeight='bolder'
                                 fontSize='24px'
                                 my='10px'
                             >

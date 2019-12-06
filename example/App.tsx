@@ -73,7 +73,7 @@ const App = () => {
                 <HowItWorks
                     steps={[
                         {
-                            title: 'Imagine',
+                            title: 'Find your Hackintosh EFI and put it on your butt',
                             icon: <img height='200px' src={require('./images/1.png')} />
                         },
                         {
