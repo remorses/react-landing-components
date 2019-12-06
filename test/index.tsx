@@ -30,7 +30,7 @@ cosa:
 
 const App = () => {
     return (
-        <Provider color='rgb(15,52,74)'>
+        <Provider color='rgb(15,52,74)' bg='#eee' gradients={['#ffeae8', '#f1efff',]}>
             <Hero>
                 <Logo width={['100%', null, '800px']} src={require('./mongoke.svg')} />
                 <Head fontSize='60px'>Mongoke</Head>

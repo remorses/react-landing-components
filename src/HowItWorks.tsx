@@ -70,7 +70,7 @@ const HowItWorks = ({ steps = [] }: { steps: Step[] }) => {
                             <Text
                                 width='auto'
                                 fontWeight='bolder'
-                                fontSize='32px'
+                                fontSize='24px'
                                 my='10px'
                             >
                                 {data.title}
