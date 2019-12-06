@@ -13,22 +13,44 @@ import {
     NavBar,
     Footer,
     Line,
-    SignupForm
+    SignupForm,
+    HowItWorks
 } from '../src'
 import React from 'react'
 import { H1, Image, Text, Box, Row } from 'hybrid-components'
-import { Archive, Airplay, Aperture, ArrowRight, FileText, UploadCloud, Database, Lock, List, Activity, Grid, PackageIcon, Shield } from 'styled-icons/feather'
-import {Plug} from 'styled-icons/octicons'
-import { DOCS_LINK, GITHUB_LINK, codeStr, codeGraphql, codeSchema, codeTypes, codeRelations, TWITTER_LINK } from './constants'
-
-
+import {
+    Archive,
+    Airplay,
+    Aperture,
+    ArrowRight,
+    FileText,
+    UploadCloud,
+    Database,
+    Lock,
+    List,
+    Activity,
+    Grid,
+    PackageIcon,
+    Shield
+} from 'styled-icons/feather'
+import { Plug } from 'styled-icons/octicons'
+import {
+    DOCS_LINK,
+    GITHUB_LINK,
+    codeStr,
+    codeGraphql,
+    codeSchema,
+    codeTypes,
+    codeRelations,
+    TWITTER_LINK
+} from './constants'
 
 const App = () => {
     return (
         <Provider
-            // color='rgb(15,52,74)'
-            // bg='#eee'
-            // gradients={['#ffeae8', '#f1efff']}
+        // color='rgb(15,52,74)'
+        // bg='#eee'
+        // gradients={['#ffeae8', '#f1efff']}
         >
             <NavBar color='black' bg='white'>
                 <a href={DOCS_LINK}>Docs</a>
@@ -41,13 +63,29 @@ const App = () => {
                 />
                 <Head fontSize='60px'>Mongoke</Head>
                 <SubHead>instant Graphql on MongoDb</SubHead>
-                <SignupForm/>
+                <SignupForm />
             </Hero>
-            <Line/>
+            <Line />
             <Section>
                 <Head>
                     Serve your MongoDb via Graphql with a one file configuration
                 </Head>
+                <HowItWorks
+                    steps={[
+                        {
+                            title: 'Imagine',
+                            icon: <img height='200px' src={require('./images/1.png')} />
+                        },
+                        {
+                            title: 'Create',
+                            icon: <img height='200px' src={require('./images/2.png')} />
+                        },
+                        {
+                            title: 'Profit',
+                            icon: <img height='200px' src={require('./images/3.png')} />
+                        },
+                    ]}
+                />
                 <Steps>
                     <Steps.Step
                         icon={<FileText width='90px' />}
@@ -66,18 +104,14 @@ const App = () => {
                     />
                 </Steps>
 
-                <Row flexWrap='wrap' justifyContent='center' alignItems='center'>
-                    <Code
-                        
-                        language='yaml'
-                        code={codeStr}
-                    />
-                    <ArrowRight width='60px' opacity={.3}/>
-                    <Code
-                        light
-                        language='yaml'
-                        code={codeGraphql}
-                    />
+                <Row
+                    flexWrap='wrap'
+                    justifyContent='center'
+                    alignItems='center'
+                >
+                    <Code language='yaml' code={codeStr} />
+                    <ArrowRight width='60px' opacity={0.3} />
+                    <Code light language='yaml' code={codeGraphql} />
                 </Row>
             </Section>
             <Section>
@@ -113,7 +147,7 @@ const App = () => {
                     />
                 </FeatureList>
             </Section>
-            
+
             <Section>
                 <Head>Features</Head>
                 <Feature
@@ -135,16 +169,23 @@ const App = () => {
                     The expression are written in Python and evaluated from top down until one evaluates to true
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<Row><Code language='yaml' code={codeTypes} width={['100vw', 'auto', null, null]} /></Row>}
+                    image={
+                        <Row>
+                            <Code
+                                language='yaml'
+                                code={codeTypes}
+                                width={['100vw', 'auto', null, null]}
+                            />
+                        </Row>
+                    }
                 />
                 <Feature
-                    
                     title='Relations between types'
                     description={`
                     Relations are described in the configuration via a query object that will be sent to mongodb, this can evaluate expressions based on the parent component.
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
-                    image={<Code   language='yaml' code={codeRelations}  />}
+                    image={<Code language='yaml' code={codeRelations} />}
                 />
                 <Feature
                     right
@@ -154,9 +195,8 @@ const App = () => {
                     `}
                     // image={<img  src='https://developer.cohesity.com/img/python.png'/>}
                     // image={<img width='300px' src={require('./network.png')} style={{opacity: .9}} />}
-                    image={<Plug width='200px'/>}
+                    image={<Plug width='200px' />}
                 />
-
             </Section>
             <Footer
                 columns={{
