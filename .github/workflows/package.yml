@@ -17,7 +17,7 @@ jobs:
       - run: yarn
       - run: yarn install-peers -f
       # - run: npm test
-      - run: tsc && npm publish
+      - run: tsc && yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
       # - name: Docker Login

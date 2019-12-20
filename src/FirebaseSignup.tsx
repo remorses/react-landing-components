@@ -16,7 +16,7 @@ import {
 } from 'react-social-login-buttons'
 
 import Button from './Button'
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app'
 import 'firebase/auth'
 import { BoxProps } from 'hybrid-components/src/types'
 
