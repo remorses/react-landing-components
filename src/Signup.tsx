@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Row } from 'hybrid-components'
+import { Form, useField } from 'react-final-form'
 import Color from 'color'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { Button } from '.'
@@ -11,12 +12,12 @@ const Label = styled.div`
     margin: 20px 0;
 `
 
-const Input = styled.input`
+const StyledInput = styled.input`
     font-size: 18px;
     padding: 10px 20px;
     background: white;
     border: 1px solid ${(p) => '#ddd'};
-    border-radius:  8px 0px 0px 8px;
+    border-radius: 8px 0px 0px 8px;
     min-width: 270px;
     min-height: 100%;
     ::placeholder {
@@ -24,37 +25,74 @@ const Input = styled.input`
     }
 `
 
-const Form = styled.form`
-    margin: 0;
-    padding: 0;
-    width: 100%;
-`
+const TextInput = ({ name, ...rest }) => {
+    const { input, meta } = useField(name)
 
-export default ({ action = '', placeholder='email address', label = 'Signup', buttonText = 'Signup' }) => {
+    return (
+        <>
+            <StyledInput {...input} {...rest} />
+        </>
+    )
+}
+
+export default ({
+    mailchimpAudienceId = 'e774d6f31e',
+    mailchimpApiKey = 'cf0e202869f9ff6ab2003837746aa33a-us20',
+    placeholder = 'email address',
+    label = 'Signup',
+    buttonText = 'Signup'
+}) => {
+    async function signup({ email_address }) {
+        try {
+            if (!email_address) {
+                throw Error('no email')
+            }
+            await fetch(
+                `https://us20.api.mailchimp.com/3.0/lists/${mailchimpAudienceId}/members/`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Basic ' + btoa('anystring:' + mailchimpApiKey)
+                    },
+                    body: JSON.stringify({
+                        email_address,
+                        status: 'subscribed',
+                        // merge_fields: {}
+                    })
+                }
+            )
+        } catch (e) {
+            alert(e.message)
+        }
+    }
     return (
         <Box alignItems='center' width='auto'>
             <Form
-                action={action}
-                method='post'
-                id='mc-embedded-subscribe-form'
-                name='mc-embedded-subscribe-form'
-                target='_blank'
-            >
-                <Label>{label}</Label>
-                <Row alignItems='stretch'>
-                    <Input
-                        type='email'
-                        name='EMAIL'
-                        id='mce-EMAIL'
-                        placeholder={placeholder}
-                        required
-                    />
-
-                    <Button style={{ margin: 0 }} type='submit' as='button'>
-                        {buttonText}
-                    </Button>
-                </Row>
-            </Form>
+                onSubmit={signup}
+                render={({ handleSubmit }) => {
+                    return (
+                        <>
+                            <Label>{label}</Label>
+                            <Row alignItems='stretch'>
+                                <TextInput
+                                    type='email'
+                                    name='email_address'
+                                    placeholder={placeholder}
+                                    required
+                                />
+                                <Button
+                                    style={{ margin: 0 }}
+                                    onClick={handleSubmit}
+                                    as='button'
+                                >
+                                    {buttonText}
+                                </Button>
+                            </Row>
+                        </>
+                    )
+                }}
+            />
         </Box>
     )
 }

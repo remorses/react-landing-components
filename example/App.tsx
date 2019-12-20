@@ -16,6 +16,7 @@ import {
     SignupForm,
     HowItWorks
 } from '../src'
+import {GoogleButton, GithubButton} from '../src/FirebaseSignup'
 import React from 'react'
 import { H1, Image, Text, Box, Row } from 'hybrid-components'
 import {
@@ -44,6 +45,7 @@ import {
     codeRelations,
     TWITTER_LINK
 } from './constants'
+import firebase from 'firebase'
 
 const App = () => {
     return (
@@ -63,7 +65,10 @@ const App = () => {
                 />
                 <Head fontSize='60px'>Mongoke</Head>
                 <SubHead>instant Graphql on MongoDb</SubHead>
-                <SignupForm />
+                <GoogleButton config={firebaseConfig} text='Start With Google'/>
+                <GithubButton config={firebaseConfig} text='Start With Github'/>
+                <pre>{JSON.stringify(firebase.apps.length && firebase.auth().currentUser, null, 4)}</pre>
+                {/* <SignupForm /> */}
             </Hero>
             <Line />
             <Section>
@@ -215,6 +220,17 @@ const App = () => {
             />
         </Provider>
     )
+}
+
+const firebaseConfig = {
+    apiKey: 'AIzaSyD0ll629FiyH5SJ903ZeDdYpahfGPOqzxQ',
+    authDomain: 'molten-enigma-261612.firebaseapp.com',
+    databaseURL: 'https://molten-enigma-261612.firebaseio.com',
+    projectId: 'molten-enigma-261612',
+    storageBucket: 'molten-enigma-261612.appspot.com',
+    messagingSenderId: '794182721870',
+    appId: '1:794182721870:web:945e67c12addaa0cd43e1f',
+    measurementId: 'G-YL40MBMZ0L'
 }
 
 export default App
