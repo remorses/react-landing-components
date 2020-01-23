@@ -14,7 +14,6 @@ interface Theme {
 const Styler = styled.div<{ theme: Theme }>`
     @import url('https://fonts.googleapis.com/css?family=Roboto');
     @import url('https://fonts.googleapis.com/css?family=Source%20Code%20Pro');
-
     color: ${(p) => p.theme.color || 'black'};
     background: ${(p) => p.theme.bg || 'white'};
     padding: 0;
@@ -29,6 +28,8 @@ const Styler = styled.div<{ theme: Theme }>`
 `
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 body {
     padding: 0;
     margin: 0;

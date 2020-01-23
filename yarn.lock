@@ -485,16 +485,6 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/styled-components@latest":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.4.2.tgz#709fa7afd7dc0963b8316a0159240f0fe19a026d"
-  integrity sha512-dngFx2PuGoy0MGE68eHayAmJvLSqWrnTe9w+DnQruu8PS+waWEsKmoBRhkzL2h2pK1OJhzJhVfuiz+oZa4etpA==
-  dependencies:
-    "@types/hoist-non-react-statics" "*"
-    "@types/react" "*"
-    "@types/react-native" "*"
-    csstype "^2.2.0"
-
 "@types/styled-system@latest":
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.4.tgz#c273b1ebb9b26cb1bd9282c994fc56c82d0fbfaf"
@@ -930,17 +920,15 @@ hoist-non-react-statics@^3.3.0:
   dependencies:
     react-is "^16.7.0"
 
-hybrid-components@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/hybrid-components/-/hybrid-components-3.0.4.tgz#83429d2a0b36bdc83f061b3c21f5c6fc583164da"
-  integrity sha512-5JL/5e3qsDPDFvqRfs7qyUKny//VToE2/lAgU7qjoJt+yjYZU8ZpAgSI4qUgy9bkTxk45bL7BNIgh8c8RxzVrw==
+hybrid-components@^4.0.7:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/hybrid-components/-/hybrid-components-4.0.7.tgz#fa71bd7d8fd265d4a574620136fb67dc72038812"
+  integrity sha512-4Ho4JXBTCy90Ayj2HvTK8LVZrISuq1wW5gs2wMXUkhvtNni3rXLZSAcHW7UB5KsmDD1xV+MPz33rvBNTCh7nhA==
   dependencies:
     "@styled-system/css" "^5.0.23"
     "@styled-system/should-forward-prop" "^5.1.0"
-    "@types/styled-components" latest
     "@types/styled-system" latest
-    color "^3.1.2"
-    styled-system "^5.1.0"
+    styled-system "^5.1.4"
 
 import-fresh@^3.1.0:
   version "3.2.1"
@@ -1485,7 +1473,7 @@ styled-icons@^8.6.0:
     "@emotion/is-prop-valid" "^0.8.3"
     tslib "^1.9.3"
 
-styled-system@^5.1.0, styled-system@^5.1.4:
+styled-system@^5.1.4:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-5.1.4.tgz#953003bbda659092e5630e23da2ab7e855c65879"
   integrity sha512-b1EdfZ41NDcR6vnvZauylhpFvSjsFl1yyQEUA+v3rLjcKdM//EIFY195Nh3YLwgj+hWIWsG0Tk1Kl0tq1xLw8Q==

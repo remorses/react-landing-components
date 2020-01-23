@@ -18,7 +18,7 @@ import {
 } from '../src'
 // import {GoogleButton, GithubButton} from '../src/FirebaseSignup'
 import React from 'react'
-import { H1, Image, Text, Box, Row } from 'hybrid-components'
+import { Row } from 'hybrid-components'
 import {
     Archive,
     Airplay,

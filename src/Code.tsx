@@ -18,7 +18,10 @@ export const Pre: FC<any> = styled.pre`
     letter-spacing: -.04em;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
-    font-family: "Source Code Pro", Roboto;
+    font-family: 'Source Code Pro', monospace;
+    font-style: normal;
+    font-weight: 400;
+
     & .token-line {
         line-height: 1.3em;
         height: 1.3em;
