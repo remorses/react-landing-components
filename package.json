@@ -1,12 +1,15 @@
 {
   "name": "react-landing-page-components",
   "_": "[bump]",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "dist/index.d.ts",
-  "files": ["/dist/*", "/esm/*"],
+  "files": [
+    "/dist/*",
+    "/esm/*"
+  ],
   "scripts": {
     "test": "mocha --require ts-node/register --timeout 10000 tests/* --colors",
     "example": "parcel serve --no-autoinstall example/index.html"
