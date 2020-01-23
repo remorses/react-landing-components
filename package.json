@@ -1,7 +1,7 @@
 {
   "name": "react-landing-page-components",
   "_": "[bump]",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "",
   "main": "dist/index.js",
   "module": "esm/index.js",
