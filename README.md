@@ -1,4 +1,4 @@
 # nodejs-lib-template
 ```
-npm i eact-landing-page-components
+yarn add react-landing-page-components react-final-form final-form styled-components
 ```

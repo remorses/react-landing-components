@@ -16,7 +16,7 @@ import {
     SignupForm,
     HowItWorks
 } from '../src'
-import {GoogleButton, GithubButton} from '../src/FirebaseSignup'
+// import {GoogleButton, GithubButton} from '../src/FirebaseSignup'
 import React from 'react'
 import { H1, Image, Text, Box, Row } from 'hybrid-components'
 import {
@@ -45,7 +45,7 @@ import {
     codeRelations,
     TWITTER_LINK
 } from './constants'
-import firebase from 'firebase'
+// import firebase from 'firebase'
 
 const App = () => {
     return (
@@ -65,9 +65,9 @@ const App = () => {
                 />
                 <Head fontSize='60px'>Mongoke</Head>
                 <SubHead>instant Graphql on MongoDb</SubHead>
-                <GoogleButton config={firebaseConfig} text='Start With Google'/>
+                {/* <GoogleButton config={firebaseConfig} text='Start With Google'/>
                 <GithubButton config={firebaseConfig} text='Start With Github'/>
-                <pre>{JSON.stringify(firebase.apps.length && firebase.auth().currentUser, null, 4)}</pre>
+                <pre>{JSON.stringify(firebase.apps.length && firebase.auth().currentUser, null, 4)}</pre> */}
                 {/* <SignupForm /> */}
             </Hero>
             <Line />

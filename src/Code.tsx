@@ -5,7 +5,7 @@ import themeLight from 'prism-react-renderer/themes/duotoneLight'
 
 import styled from 'styled-components'
 import { Box } from 'hybrid-components'
-import { BoxProps } from 'hybrid-components/src/types'
+import { BoxProps } from 'hybrid-components'
 
 export const Pre: FC<any> = styled.pre`
     text-align: left;

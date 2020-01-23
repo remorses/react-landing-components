@@ -3,7 +3,7 @@ import { Box } from 'hybrid-components'
 import Color from 'color'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { layout, space } from 'styled-system'
-import { BoxProps } from 'hybrid-components/src/types'
+import { BoxProps } from 'hybrid-components'
 
 interface Theme {
     color: string

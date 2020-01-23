@@ -15,9 +15,10 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn
-      - run: yarn install-peers -f
       # - run: npm test
-      - run: tsc && yarn publish
+      - run: tsc
+      - run: tsc -m es6 --outdir esm
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
       # - name: Docker Login

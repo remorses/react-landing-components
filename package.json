@@ -4,20 +4,18 @@
   "version": "0.0.17",
   "description": "",
   "main": "dist/index.js",
+  "module": "esm/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "/dist/*"
-  ],
+  "files": ["/dist/*", "/esm/*"],
   "scripts": {
     "test": "mocha --require ts-node/register --timeout 10000 tests/* --colors",
-    "example": "yarn install-peers -f && parcel serve --no-autoinstall example/index.html"
+    "example": "parcel serve --no-autoinstall example/index.html"
   },
   "keywords": [],
   "author": "Tommaso De Rossi, morse <beats.by.morse@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.7.4",
-    "@types/firebase": "^3.2.1",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.7",
     "install-peers-cli": "^2.2.0",
@@ -32,18 +30,15 @@
     "@types/styled-components": "^4.4.0",
     "color": "^3.1.2",
     "final-form": "^4.18.6",
-    "hybrid-components": "^2.0.27",
+    "hybrid-components": "^3.0.4",
     "prism-react-renderer": "^1.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-final-form": "^6.3.3",
     "react-loading-skeleton": "^1.3.0",
     "react-social-login-buttons": "^3.0.0",
     "react-use-promise": "^0.2.0",
     "styled-components": "^4.4.1",
     "styled-icons": "^8.6.0"
-  },
-  "peerDependencies": {
-    "firebase": "^7.6.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.11.0"
   }
 }
