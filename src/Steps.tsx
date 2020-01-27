@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, H1, H2, Text, Row } from 'hybrid-components'
+import { Box,   Text, Row } from 'hybrid-components'
 import styled from 'styled-components'
 
 const Container = styled(Box)`

@@ -13,7 +13,7 @@ import {
 } from '../src'
 import React from 'react'
 import { render } from 'react-dom'
-import { H1, Image, Text, Box } from 'hybrid-components'
+import {  Image, Text, Box } from 'hybrid-components'
 import { Head, SubHead } from '../src/Text'
 import { Archive, Airplay, Aperture, Github } from 'styled-icons/feather'
 

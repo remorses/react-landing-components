@@ -1,5 +1,5 @@
 import React, { useContext, ReactNode } from 'react'
-import { Box, H1, H2, Row, Text } from 'hybrid-components'
+import { Box,   Row, Text } from 'hybrid-components'
 import Color from 'color'
 import styled, { ThemeContext } from 'styled-components'
 

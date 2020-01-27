@@ -12,7 +12,7 @@ import {
 } from 'react-landing-page-components'
 import React from 'react'
 import { render } from 'react-dom'
-import { H1, Image, Text, Box } from 'hybrid-components'
+import {  Image, Text, Box } from 'hybrid-components'
 import { Archive, Airplay, Aperture } from 'styled-icons/feather'
 
 const codeStr = `

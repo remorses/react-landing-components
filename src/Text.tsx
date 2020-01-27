@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, H1, H2, Text } from 'hybrid-components'
+import { Box,   Text } from 'hybrid-components'
 import styled from 'styled-components'
 import { BoxProps, TextProps } from 'hybrid-components'
 

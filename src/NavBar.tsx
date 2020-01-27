@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Box, H1, H2, Row } from 'hybrid-components'
+import { Box,   Row } from 'hybrid-components'
 import styled, { ThemeContext } from 'styled-components'
 
 const Styler = styled.div`
