@@ -1,5 +1,5 @@
+import { Box, Row } from 'hybrid-components'
 import React, { useContext } from 'react'
-import { Box,   Row } from 'hybrid-components'
 import styled, { ThemeContext } from 'styled-components'
 
 const Styler = styled.div`
@@ -18,7 +18,7 @@ const Styler = styled.div`
     }
 `
 
-export default ({ children, color = '', bg='' }) => {
+export default ({ children, color = '', bg = '' }) => {
     const theme = useContext(ThemeContext)
     const style = {
         color: color || theme.color,
@@ -32,7 +32,9 @@ export default ({ children, color = '', bg='' }) => {
             style={style}
         >
             <Styler>
-                <Row mx='40px' width='auto' justifyContent='flex-end'>{children}</Row>
+                <Row mx='40px' width='auto' justifyContent='flex-end'>
+                    {children}
+                </Row>
             </Styler>
         </Box>
     )

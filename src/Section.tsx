@@ -1,5 +1,5 @@
+import { Box } from 'hybrid-components'
 import React from 'react'
-import { Box, } from 'hybrid-components'
 import styled from 'styled-components'
 
 const Container = styled(Box)`
@@ -12,12 +12,6 @@ const Container = styled(Box)`
     padding-bottom: 0;
 `
 
-export default ({
-    children
-}) => {
-    return (
-        <Container >
-            {children}
-        </Container>
-    )
+export default ({ children }) => {
+    return <Container>{children}</Container>
 }

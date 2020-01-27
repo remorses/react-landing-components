@@ -1,9 +1,6 @@
+import { Box, BoxProps } from 'hybrid-components'
 import React, { FC } from 'react'
-import { Box } from 'hybrid-components'
-import Color from 'color'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { layout, space } from 'styled-system'
-import { BoxProps } from 'hybrid-components'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 interface Theme {
     color: string
@@ -62,13 +59,24 @@ export const Provider = ({
 }
 
 export const Line: FC<any> = styled.div`
-height: 2px;
-background: ${p => p.theme.color};
-width: 70%;
-margin: 0 auto;
-opacity: .1;
+    height: 2px;
+    background: ${(p) => p.theme.color};
+    width: 70%;
+    margin: 0 auto;
+    opacity: 0.1;
 `
 
+export { default as Button } from './Button'
+export { default as Code } from './Code'
+export { default as Feature } from './Feature'
+export { default as FeatureList } from './FeatureList'
+export { default as Footer } from './Footer'
+export { default as Hero } from './Hero'
+export { default as HowItWorks } from './HowItWorks'
+export { default as NavBar } from './NavBar'
+export { default as Section } from './Section'
+export { default as SignupForm } from './Signup'
+export { default as Steps } from './Steps'
 export * from './Text'
 
 export const Logo: FC<BoxProps & { src: string }> = (p) => {
@@ -78,15 +86,3 @@ export const Logo: FC<BoxProps & { src: string }> = (p) => {
         </Box>
     )
 }
-
-export { default as Hero } from './Hero'
-export { default as HowItWorks } from './HowItWorks'
-export { default as SignupForm } from './Signup'
-export { default as NavBar } from './NavBar'
-export { default as Footer } from './Footer'
-export { default as FeatureList } from './FeatureList'
-export { default as Button } from './Button'
-export { default as Code } from './Code'
-export { default as Section } from './Section'
-export { default as Steps } from './Steps'
-export { default as Feature } from './Feature'

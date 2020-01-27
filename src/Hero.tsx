@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box, } from 'hybrid-components'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -23,19 +22,12 @@ const BackImage = styled.img`
     object-fit: cover;
 `
 
-export default ({
-    backImg = '',
-    bg = 'none',
-    children,
-    color=''
-}) => {
+export default ({ backImg = '', bg = 'none', children, color = '' }) => {
     return (
-        <Container style={color ? {color} : {}}>
+        <Container style={color ? { color } : {}}>
             {children}
             {backImg && <BackImage src={backImg} alt='' />}
-            {bg && (
-                <BackImage as={'div'} style={{ background: bg }} />
-            )}
+            {bg && <BackImage as={'div'} style={{ background: bg }} />}
         </Container>
     )
 }

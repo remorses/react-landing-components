@@ -1,7 +1,8 @@
-import React, { useContext, ReactNode } from 'react'
-import { Box,   Row, Text } from 'hybrid-components'
-import Color from 'color'
+import { Box, Row, Text } from 'hybrid-components'
+import React, { ReactNode, useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
+
+import Color from 'color'
 
 const Styler = styled.div`
     display: inline-block;

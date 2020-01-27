@@ -1,5 +1,6 @@
+import { Box, Row, Text } from 'hybrid-components'
+
 import React from 'react'
-import { Box,   Text, Row } from 'hybrid-components'
 import styled from 'styled-components'
 
 const Container = styled(Box)`
@@ -12,8 +13,8 @@ const Container = styled(Box)`
     margin: 50px 0;
 `
 const AlignLeft = styled.div`
-display: inline-block;
-text-align:
+    display: inline-block;
+    text-align: ;
 `
 
 const Features = ({ children }) => {
@@ -33,9 +34,11 @@ const Features = ({ children }) => {
 
 const Feature = ({ title, description, icon = <img /> }) => {
     return (
-        <Box  m='40px' alignItems='flex-start' width='auto'>
+        <Box m='40px' alignItems='flex-start' width='auto'>
             <Row justifyContent='flex-start' alignItems='center' width='auto'>
-                <Box width='100px'>{React.cloneElement(icon, { height: '50px' })}</Box>
+                <Box width='100px'>
+                    {React.cloneElement(icon, { height: '50px' })}
+                </Box>
                 <Box width='auto'>
                     <Text
                         textAlign='left'

@@ -1,7 +1,5 @@
 import React, { FC } from 'react'
-import { Box,   Text } from 'hybrid-components'
-import styled from 'styled-components'
-import { BoxProps, TextProps } from 'hybrid-components'
+import { Text, TextProps } from 'hybrid-components'
 
 export const Head: FC<TextProps> = (p) => {
     return (
@@ -20,7 +18,7 @@ export const SubHead: FC<TextProps> = (p) => {
         <Text
             fontSize='34px'
             fontWeight='normal'
-            opacity={.8}
+            opacity={0.8}
             my='10px'
             maxWidth={'800px'}
             textAlign='center'

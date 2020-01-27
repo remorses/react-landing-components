@@ -1,9 +1,8 @@
-import React from 'react'
-import { Box, Text, } from 'hybrid-components'
-import styled from 'styled-components'
-import { space } from 'styled-system'
+import { Box, Text } from 'hybrid-components'
 
-const Paragraphs = ({ children, right=false }) => {
+import React from 'react'
+
+const Paragraphs = ({ children, right = false }) => {
     return (
         <>
             {children
@@ -28,7 +27,7 @@ const Paragraphs = ({ children, right=false }) => {
     )
 }
 
-const Part = ({children, ...p}) => (
+const Part = ({ children, ...p }) => (
     <Box
         // px='60px'
         alignItems='center'
@@ -37,12 +36,14 @@ const Part = ({children, ...p}) => (
         width='auto'
         {...p}
     >
-        <Box 
-                justifyContent='space-evenly'
-                alignItems='flex-start'
-                minHeight='300px'
-                width='100%'
-        >{children}</Box>
+        <Box
+            justifyContent='space-evenly'
+            alignItems='flex-start'
+            minHeight='300px'
+            width='100%'
+        >
+            {children}
+        </Box>
     </Box>
 )
 
@@ -55,14 +56,19 @@ export default ({
 }) => {
     const a = (
         <Part key='1'>
-            <Text textAlign='left' fontWeight='bold' fontSize='32px' maxWidth='400px'>
+            <Text
+                textAlign='left'
+                fontWeight='bold'
+                fontSize='32px'
+                maxWidth='400px'
+            >
                 {title}
             </Text>
             {/* <Box height='40px' /> */}
             <Paragraphs right={right}>{description}</Paragraphs>
         </Part>
     )
-    const b = <Part key='2'>{React.cloneElement(image, {  })}</Part>
+    const b = <Part key='2'>{React.cloneElement(image, {})}</Part>
 
     const direction = right ? 'row' : 'row-reverse'
     return (

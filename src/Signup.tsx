@@ -1,9 +1,9 @@
-import React from 'react'
 import { Box, Row } from 'hybrid-components'
 import { Form, useField } from 'react-final-form'
-import Color from 'color'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+
 import { Button } from '.'
+import React from 'react'
+import styled from 'styled-components'
 
 const Label = styled.div`
     width: 100%;
@@ -53,11 +53,12 @@ export default ({
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization: 'Basic ' + btoa('anystring:' + mailchimpApiKey)
+                        Authorization:
+                            'Basic ' + btoa('anystring:' + mailchimpApiKey)
                     },
                     body: JSON.stringify({
                         email_address,
-                        status: 'subscribed',
+                        status: 'subscribed'
                         // merge_fields: {}
                     })
                 }

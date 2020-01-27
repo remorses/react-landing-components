@@ -1,8 +1,6 @@
-import React from 'react'
-import { Box } from 'hybrid-components'
 import Color from 'color'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import React from 'react'
+import styled from 'styled-components'
 
 const getColor = (p) => {
     if (p.invert) {
@@ -20,7 +18,9 @@ const getBg = (p) => {
     return p.theme.color
 }
 
-interface Props { invert?: boolean }
+interface Props {
+    invert?: boolean
+}
 
 const ButtonInside = styled.div<Props>`
     position: absolute;
@@ -34,7 +34,7 @@ const ButtonInside = styled.div<Props>`
     background: ${getBg};
     color: ${getColor};
     transform: translateY(100%);
-    transition: transform .1s ease-out;
+    transition: transform 0.1s ease-out;
 `
 
 const ButtonContainer = styled.a<Props>`
@@ -52,7 +52,7 @@ const ButtonContainer = styled.a<Props>`
     &:active {
         opacity: 0;
     }
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     &:hover {
         box-shadow: 0 0 0 #000;
     }
@@ -61,13 +61,12 @@ const ButtonContainer = styled.a<Props>`
     }
 `
 
-
-
-
-export default ({ invert=false, children, href='', ...p }) => {
+export default ({ invert = false, children, href = '', ...p }) => {
     return (
-        <ButtonContainer href={href} invert={invert} {...p} >
-            <ButtonInside onClick={() => href} invert={invert}>Let's go</ButtonInside>
+        <ButtonContainer href={href} invert={invert} {...p}>
+            <ButtonInside onClick={() => href} invert={invert}>
+                Let's go
+            </ButtonInside>
             {children}
         </ButtonContainer>
     )

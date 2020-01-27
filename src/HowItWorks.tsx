@@ -1,7 +1,6 @@
+import { Box, Row, Text } from 'hybrid-components'
+
 import React from 'react'
-import { Box, Text,   Row } from 'hybrid-components'
-import styled from 'styled-components'
-import { space } from 'styled-system'
 
 export interface Step {
     title: string

@@ -1,11 +1,10 @@
+import { Box, BoxProps } from 'hybrid-components'
+import Highlight, { Language, defaultProps } from 'prism-react-renderer'
 import React, { FC } from 'react'
-import Highlight, { defaultProps, Language } from 'prism-react-renderer'
-import themeDark from 'prism-react-renderer/themes/palenight'
-import themeLight from 'prism-react-renderer/themes/duotoneLight'
 
 import styled from 'styled-components'
-import { Box } from 'hybrid-components'
-import { BoxProps } from 'hybrid-components'
+import themeDark from 'prism-react-renderer/themes/palenight'
+import themeLight from 'prism-react-renderer/themes/duotoneLight'
 
 export const Pre: FC<any> = styled.pre`
     text-align: left;
@@ -15,9 +14,9 @@ export const Pre: FC<any> = styled.pre`
     padding-right: 10px;
     overflow-x: auto;
     overflow-y: hidden;
-    letter-spacing: -.04em;
+    letter-spacing: -0.04em;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     font-family: 'Source Code Pro', monospace;
     font-style: normal;
     font-weight: 400;
@@ -35,15 +34,16 @@ export const LineNo: FC<any> = styled.span`
     opacity: 0.3;
 `
 
-const Code = (p: {light?: boolean, language: Language; code: string } & BoxProps) => {
+const Code = (
+    p: { light?: boolean; language: Language; code: string } & BoxProps
+) => {
     return (
-        <Box
-            width='auto'
-            style={{ fontSize: '16px', }}
-            m='40px'
-            {...p}
-        >
-            <Highlight {...defaultProps} theme={!p.light ? themeDark : themeLight} {...p}>
+        <Box width='auto' style={{ fontSize: '16px' }} m='40px' {...p}>
+            <Highlight
+                {...defaultProps}
+                theme={!p.light ? themeDark : themeLight}
+                {...p}
+            >
                 {({
                     className,
                     style,
@@ -51,7 +51,7 @@ const Code = (p: {light?: boolean, language: Language; code: string } & BoxProps
                     getLineProps,
                     getTokenProps
                 }) => (
-                    <Pre  className={className} style={style}>
+                    <Pre className={className} style={style}>
                         {tokens.map((line, i) => (
                             <div {...getLineProps({ line, key: i })}>
                                 <LineNo>{i + 1}</LineNo>
